@@ -1,105 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Poppins:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* digiOH Design System - Professional Digital Agency */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* digiOH Brand Colors */
+    --primary-blue: 218 55% 57%; /* #5B82C3 */
+    --deep-navy: 227 64% 19%; /* #12234F */
+    --accent-gold: 43 96% 66%; /* #FBBC51 */
+    --accent-orange: 22 94% 58%; /* #F98D2E */
+    --brand-indigo: 246 47% 57%; /* #655BC2 */
+    --deep-indigo: 247 64% 21%; /* #1D124F */
+    --lime-accent: 69 95% 65%; /* #E9FA50 */
+    --lime-bright: 53 95% 58%; /* #FAEC2D */
+    --surface-light: 212 100% 97%; /* #F3F9FF */
+    --pure-black: 0 0% 0%; /* #000000 */
+    
+    /* Theme Variables */
+    --background: var(--surface-light);
+    --foreground: var(--deep-navy);
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: var(--deep-navy);
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: var(--deep-navy);
+    --primary: var(--primary-blue);
+    --primary-foreground: 0 0% 100%;
+    --secondary: var(--surface-light);
+    --secondary-foreground: var(--deep-navy);
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 20% 55%;
+    --accent: var(--accent-gold);
+    --accent-foreground: var(--deep-navy);
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: var(--primary-blue);
+    --radius: 1rem;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Custom Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary-blue)), hsl(var(--deep-navy)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent-gold)), hsl(var(--accent-orange)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--surface-light)), hsl(0 0% 100%));
+    --gradient-indigo: linear-gradient(135deg, hsl(var(--brand-indigo)), hsl(var(--deep-indigo)));
+    
+    /* Shadows */
+    --shadow-card: 0 4px 20px hsl(var(--primary-blue) / 0.1);
+    --shadow-elevated: 0 8px 40px hsl(var(--deep-navy) / 0.15);
+    --shadow-glow: 0 0 30px hsl(var(--accent-gold) / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: var(--deep-navy);
+    --foreground: 0 0% 100%;
+    --card: var(--deep-indigo);
+    --card-foreground: 0 0% 100%;
+    --popover: var(--deep-indigo);
+    --popover-foreground: 0 0% 100%;
+    --primary: var(--accent-gold);
+    --primary-foreground: var(--deep-navy);
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Custom Button Variants */
+  .btn-hero {
+    @apply bg-accent-gold hover:bg-accent-orange text-navy font-body font-semibold px-8 py-4 rounded-xl shadow-glow transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-outline-hero {
+    @apply border-2 border-white/30 text-white hover:bg-white/10 font-body font-semibold px-8 py-4 rounded-xl backdrop-blur-sm;
+  }
+
+  /* Custom Scroll Bar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-surface;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-blue rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent-gold;
+  }
+
+  /* Focus Styles */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-accent-gold focus:ring-offset-2;
+  }
+
+  /* Text Animations */
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--accent-gold) / 0.5);
+  }
+
+  /* Backdrop Blur Utilities */
+  .backdrop-blur-strong {
+    backdrop-filter: blur(20px);
   }
 }

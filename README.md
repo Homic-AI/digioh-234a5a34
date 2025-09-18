@@ -1,73 +1,221 @@
-# Welcome to your Lovable project
+# digiOH - Digital Events Redefined
 
-## Project info
+> **Professional React-based company profile website for digiOH - a leading digital event production company since 2015.**
 
-**URL**: https://lovable.dev/projects/80a5fbd3-b954-428f-823b-88990900b18c
+![digiOH Hero](src/assets/hero-bg.jpg)
 
-## How can I edit this code?
+## 🚀 Overview
 
-There are several ways of editing your application.
+digiOH is a modern, responsive company profile website built with React, TypeScript, and Tailwind CSS. It showcases our expertise in digital event production, virtual events, hybrid solutions, and professional AV services.
 
-**Use Lovable**
+### ✨ Key Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/80a5fbd3-b954-428f-823b-88990900b18c) and start prompting.
+- **Modern Design System**: Custom design tokens based on digiOH brand colors
+- **Fully Responsive**: Optimized for all devices and screen sizes
+- **SEO Optimized**: Comprehensive meta tags, structured data, and semantic HTML
+- **Performance Focused**: Optimized images, smooth animations, and fast loading
+- **Interactive Components**: Dynamic portfolio filtering, contact forms, and smooth scrolling
+- **Professional Typography**: Bebas Neue for headings, Poppins for body text
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🎨 Design System
 
-**Use your preferred IDE**
+### Brand Colors
+- **Primary Blue**: `#5B82C3` - Main brand color
+- **Deep Navy**: `#12234F` - Text and backgrounds
+- **Accent Gold**: `#FBBC51` - Call-to-action elements
+- **Accent Orange**: `#F98D2E` - Hover states and highlights
+- **Brand Indigo**: `#655BC2` - Secondary accents
+- **Surface Light**: `#F3F9FF` - Light backgrounds
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Typography
+- **Headings**: Bebas Neue (uppercase, bold)
+- **Body Text**: Poppins (clean, professional)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📱 Sections
 
-Follow these steps:
+### 🏠 Hero Section
+- Compelling tagline with animated statistics
+- Professional event photography background
+- Dual call-to-action buttons
+- Trust indicator: "500+ successful events since 2015"
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### 🏢 Client Logos
+- Trusted brand showcase
+- Animated hover effects
+- Trust metric highlighting
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 🛠️ Services
+- 5 core service offerings:
+  - Virtual Events
+  - Hybrid Solutions
+  - Event Management
+  - Audio/Visual Production
+  - Digital Transformation
+- Feature lists and detailed descriptions
+- Call-to-action for consultations
 
-# Step 3: Install the necessary dependencies.
-npm i
+### 🎯 Portfolio
+- Filterable project showcase
+- 6 featured case studies with results
+- Modal-ready project details
+- Category filtering (Virtual, Hybrid, Corporate, Conference)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### 👥 About Us
+- Company history since 2015
+- Core values and mission
+- 6-member team showcase
+- Performance metrics and achievements
+
+### 📞 Contact Section
+- Professional contact form
+- Multiple contact methods
+- WhatsApp integration
+- Interactive map placeholder
+- Immediate response promise
+
+### 🦶 Footer
+- Newsletter subscription
+- Comprehensive link structure
+- Social media integration
+- Professional footer design
+
+## 🛠️ Technology Stack
+
+- **Frontend**: React 18 + TypeScript
+- **Styling**: Tailwind CSS + Custom Design System
+- **UI Components**: shadcn/ui
+- **Build Tool**: Vite
+- **Icons**: Lucide React
+- **Animations**: CSS transitions + Tailwind animations
+- **Forms**: React Hook Form
+- **Notifications**: Sonner toasts
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ and npm
+- Modern web browser
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd digioh
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser**
+   ```
+   http://localhost:8080
+   ```
+
+### Build for Production
+
+```bash
+npm run build
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
+## 📁 Project Structure
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+src/
+├── components/           # React components
+│   ├── ui/              # shadcn/ui components
+│   ├── Navigation.tsx   # Main navigation
+│   ├── Hero.tsx         # Hero section
+│   ├── Services.tsx     # Services showcase
+│   ├── Portfolio.tsx    # Project portfolio
+│   ├── About.tsx        # About section
+│   ├── Contact.tsx      # Contact form
+│   ├── ClientLogos.tsx  # Client showcase
+│   └── Footer.tsx       # Site footer
+├── pages/
+│   ├── Index.tsx        # Main landing page
+│   └── NotFound.tsx     # 404 page
+├── assets/              # Images and media
+├── hooks/               # Custom React hooks
+├── lib/                 # Utilities
+├── index.css           # Global styles & design system
+└── main.tsx            # App entry point
+```
 
-**Use GitHub Codespaces**
+## 🎨 Customization
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Design System
+All design tokens are defined in `src/index.css` and `tailwind.config.ts`. Modify these files to customize:
+- Brand colors
+- Typography scales
+- Spacing systems
+- Animation timings
+- Shadow styles
 
-## What technologies are used for this project?
+### Content Updates
+- Update company information in respective components
+- Replace placeholder images with actual photos
+- Modify service offerings in `Services.tsx`
+- Update portfolio projects in `Portfolio.tsx`
+- Customize team members in `About.tsx`
 
-This project is built with:
+### SEO Optimization
+SEO meta tags and structured data are configured in `index.html`. Update:
+- Page titles and descriptions
+- Open Graph tags
+- Structured data (JSON-LD)
+- Keywords and author information
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📈 Performance Features
 
-## How can I deploy this project?
+- **Optimized Images**: Responsive images with proper alt attributes
+- **Lazy Loading**: Images load only when needed
+- **Smooth Animations**: CSS-based animations for better performance
+- **Efficient Bundling**: Vite's optimized build process
+- **Clean Code**: TypeScript for better maintainability
 
-Simply open [Lovable](https://lovable.dev/projects/80a5fbd3-b954-428f-823b-88990900b18c) and click on Share -> Publish.
+## 🔧 Backend Integration Ready
 
-## Can I connect a custom domain to my Lovable project?
+This frontend is designed to integrate seamlessly with:
+- **Laravel Backend**: For CMS functionality
+- **Supabase**: For real-time features
+- **Contact Forms**: Ready for email service integration
+- **Analytics**: Google Analytics and tracking ready
 
-Yes, you can!
+## 🌐 Deployment
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Lovable Platform
+1. Connect to Lovable
+2. Deploy with one click
+3. Custom domain support available
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### Manual Deployment
+```bash
+npm run build
+# Deploy 'dist' folder to your hosting provider
+```
+
+## 📞 Support & Contact
+
+- **Website**: [digioh.com](https://digioh.com)
+- **Email**: hello@digioh.com
+- **Phone**: +1 (555) 123-4567
+- **WhatsApp**: Available for instant support
+
+## 📄 License
+
+© 2024 digiOH. All rights reserved.
+
+---
+
+**Built with ❤️ for professional digital events**
+
+*This React frontend provides a solid foundation for digiOH's online presence and can be extended with backend functionality as needed.*
