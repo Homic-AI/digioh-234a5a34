@@ -2,6 +2,8 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import * as Icons from "lucide-react";
 import { useServices } from "@/hooks/useServices";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 const Services = () => {
   const { data: services, isLoading, error } = useServices();

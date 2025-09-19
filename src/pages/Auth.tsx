@@ -6,9 +6,10 @@ import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useAuth } from "@/contexts/AuthContext";
 import { useToast } from "@/hooks/use-toast";
+import { motion } from "framer-motion";
 
 const Auth = () => {
-  const { user, signIn, signUp, loading } = useAuth();
+  const { user, profile, signIn, signUp, loading } = useAuth();
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -24,9 +25,11 @@ const Auth = () => {
     lastName: "",
   });
 
-  // Redirect if already authenticated
-  if (!loading && user) {
-    return <Navigate to="/" replace />;
+  // Role-based redirect if already authenticated
+  if (!loading && user && profile) {
+    const adminRoles = ['superadmin', 'admin', 'editor'];
+    const redirectPath = adminRoles.includes(profile.role) ? '/admin' : '/';
+    return <Navigate to={redirectPath} replace />;
   }
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -99,18 +102,29 @@ const Auth = () => {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
+        <motion.div 
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <h2 className="font-heading text-2xl font-bold text-navy uppercase mb-4">
             Loading...
           </h2>
-        </div>
+          <div className="w-8 h-8 border-4 border-primary-blue border-t-transparent rounded-full animate-spin mx-auto" />
+        </motion.div>
       </div>
     );
   }
 
   return (
     <div className="min-h-screen bg-gradient-subtle flex items-center justify-center p-4">
-      <Card className="w-full max-w-md p-8 border-0 shadow-card">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <Card className="w-full max-w-md p-8 border-0 shadow-card">
         <div className="text-center mb-8">
           <h1 className="font-heading text-3xl font-bold text-navy uppercase mb-2">
             digiOH
@@ -139,6 +153,8 @@ const Auth = () => {
                   placeholder="your@email.com"
                   required
                   className="border-muted-foreground/20 focus:border-primary-blue"
+                  aria-label="Email address"
+                  autoComplete="email"
                 />
               </div>
               
@@ -153,6 +169,8 @@ const Auth = () => {
                   placeholder="••••••••"
                   required
                   className="border-muted-foreground/20 focus:border-primary-blue"
+                  aria-label="Password"
+                  autoComplete="current-password"
                 />
               </div>
 
@@ -231,7 +249,8 @@ const Auth = () => {
             </form>
           </TabsContent>
         </Tabs>
-      </Card>
+        </Card>
+      </motion.div>
     </div>
   );
 };
