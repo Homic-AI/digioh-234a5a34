@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import * as Icons from "lucide-react";
 import { useServices } from "@/hooks/useServices";
 
@@ -22,37 +23,6 @@ const Services = () => {
   if (error || !services) {
     return null;
   }
-    {
-      icon: Monitor,
-      title: "Virtual Events",
-      description: "High-quality virtual events with interactive features, live streaming, and audience engagement tools.",
-      features: ["HD Live Streaming", "Interactive Q&A", "Breakout Rooms", "Analytics Dashboard"]
-    },
-    {
-      icon: Camera,
-      title: "Hybrid Solutions",
-      description: "Seamlessly blend physical and digital experiences for maximum reach and engagement.",
-      features: ["Multi-Camera Setup", "Real-time Interaction", "Remote Speakers", "Social Integration"]
-    },
-    {
-      icon: Users,
-      title: "Event Management",
-      description: "End-to-end event planning and execution with dedicated project management.",
-      features: ["Project Planning", "Vendor Coordination", "Timeline Management", "Risk Assessment"]
-    },
-    {
-      icon: Headphones,
-      title: "Audio/Visual Production",
-      description: "Professional AV production services with cutting-edge equipment and expertise.",
-      features: ["4K Video Production", "Professional Audio", "Lighting Design", "Stage Setup"]
-    },
-    {
-      icon: Zap,
-      title: "Digital Transformation",
-      description: "Transform traditional events into dynamic digital experiences that captivate audiences.",
-      features: ["Platform Development", "Custom Integrations", "Mobile Apps", "Cloud Solutions"]
-    }
-  ];
 
   return (
     <section id="services" className="py-20 bg-gradient-subtle">
